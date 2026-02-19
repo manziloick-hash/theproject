@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bistro Delight • Order #INV-2026-0042</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    @media print {
+      header, footer, .nav-links { display: none; }
+      body { background: white; color: black; }
+      .container { max-width: 900px; }
+      .invoice-box { box-shadow: none; border: 1px solid #aaa; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a href="index.html"><div class="logo">Bistro Delight</div></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="invoice.html" style=" color: #e67e22">Invoice</a></li>
+      <li><a href="signup.html">Signup</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <div class="container">
+    <div class="invoice-box" style="background:white; padding:2.5rem; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1); max-width:900px; margin:0 auto;">
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2.5rem;">
+        <div>
+          <h2 style="color:#2c1810; margin-bottom:0.3rem;">Order Invoice</h2>
+          <p style="color:#666;">Order #INV-2026-0042</p>
+        </div>
+        <div style="text-align:right;">
+          <div class="logo" style="font-size:2rem;">Bistro Delight</div>
+          <p style="color:#666; font-size:0.95rem;">KN 3 Ave, Kigali • +250 788 123 456</p>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-bottom:2.5rem;">
+        <div>
+          <strong>Customer:</strong><br>
+          Manzi<br>
+          +250 788 xxx xxx<br>
+          Kigali
+        </div>
+        <div style="text-align:right;">
+          <strong>Date:</strong><br>
+          February 04, 2026<br>
+          <strong>Order Type:</strong> Delivery<br>
+          <strong>Payment:</strong> Cash on Delivery
+        </div>
+      </div>
+
+      <table style="width:100%; border-collapse:collapse; margin:2rem 0;">
+        <thead>
+          <tr style="background:#f4f4f4;">
+            <th style="padding:12px; text-align:left; border-bottom:2px solid #ddd;">Item</th>
+            <th style="padding:12px; text-align:center; border-bottom:2px solid #ddd;">Qty</th>
+            <th style="padding:12px; text-align:right; border-bottom:2px solid #ddd;">Price</th>
+            <th style="padding:12px; text-align:right; border-bottom:2px solid #ddd;">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:12px; border-bottom:1px solid #eee;">Classic Cheeseburger</td>
+            <td style="padding:12px; text-align:center; border-bottom:1px solid #eee;">2</td>
+            <td style="padding:12px; text-align:right; border-bottom:1px solid #eee;">8,500 RWF</td>
+            <td style="padding:12px; text-align:right; border-bottom:1px solid #eee;">17,000 RWF</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; border-bottom:1px solid #eee;">Crispy Chicken Wrap</td>
+            <td style="padding:12px; text-align:center; border-bottom:1px solid #eee;">1</td>
+            <td style="padding:12px; text-align:right; border-bottom:1px solid #eee;">9,000 RWF</td>
+            <td style="padding:12px; text-align:right; border-bottom:1px solid #eee;">9,000 RWF</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; border-bottom:1px solid #eee;">Fresh Mango Juice</td>
+            <td style="padding:12px; text-align:center; border-bottom:1px solid #eee;">2</td>
+            <td style="padding:12px; text-align:right; border-bottom:1px solid #eee;">4,000 RWF</td>
+            <td style="padding:12px; text-align:right; border-bottom:1px solid #eee;">8,000 RWF</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align:right; font-size:1.2rem; margin:2rem 0;">
+        <div>Subtotal: <strong>34,000 RWF</strong></div>
+        <div>Delivery Fee: <strong>3,000 RWF</strong></div>
+        <div style="font-size:1.5rem; margin-top:1rem; color:#e67e22;">
+          Total: <strong>37,000 RWF</strong>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem; text-align:center; color:#555;">
+        <p>Thank you for ordering with Bistro Delight!</p>
+        <p>We’ll notify you once your food is on the way 🚀</p>
+      </div>
+
+      <div style="margin-top:2.5rem; text-align:center;">
+        <button onclick="window.print()" class="btn" style="padding:14px 40px; font-size:1.2rem;">
+          Print / Save Invoice
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025–2026 Bistro Delight • Kigali</p>
+  <p>
+    <a href="https://wa.me/250788123456?text=Hello%20I%20want%20to%20order" target="_blank" style="color:#25D366; font-weight:bold;">
+      Order via WhatsApp
+    </a>
+  </p>
+</footer> 
+<script>
+// Read parameters from URL
+const params = new URLSearchParams(window.location.search);
+
+// Get values with fallback
+const name    = params.get('name')    || '—';
+const phone   = params.get('phone')   || '—';
+const address = params.get('address') || '—';
+const type    = params.get('type')    || 'Delivery';
+const rawOrder = params.get('order')  || '';
+
+// 1. Update customer block
+const customerDiv = document.querySelector('.invoice-box > div:nth-child(3) > div:first-child');
+if (customerDiv) {
+  customerDiv.innerHTML = `
+    <strong>Customer:</strong><br>
+    ${name}<br>
+    ${phone}<br>
+    ${address || 'Not provided'}
+  `;
+}
+
+// 2. Update date / type / payment block
+const infoDiv = document.querySelector('.invoice-box > div:nth-child(3) > div:last-child');
+if (infoDiv) {
+  const today = new Date().toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+  infoDiv.innerHTML = `
+    <strong>Date:</strong><br>
+    ${today}<br>
+    <strong>Order Type:</strong> ${type}<br>
+    <strong>Payment:</strong> Cash on Delivery
+  `;
+}
+
+// 3. Parse and show order items (basic version)
+const tbody = document.querySelector('table tbody');
+if (tbody) {
+  if (!rawOrder.trim()) {
+    tbody.innerHTML = '<tr><td colspan="4" style="padding:20px; text-align:center; color:#888;">No order details received yet.</td></tr>';
+  } else {
+    let html = '';
+    const lines = rawOrder.split('\n').filter(line => line.trim());
+
+    lines.forEach(line => {
+      // Very simple parse: "2× Classic Burger" → qty=2, item=Classic Burger
+      const match = line.match(/^(\d*)\s*×?\s*(.+)$/i);
+      const qty = match && match[1] ? match[1].trim() || '1' : '1';
+      const item = match && match[2] ? match[2].trim() : line.trim();
+
+      html += `
+        <tr>
+          <td style="padding:12px; border-bottom:1px solid #eee;">${item}</td>
+          <td style="text-align:center; padding:12px; border-bottom:1px solid #eee;">${qty}</td>
+          <td style="text-align:right; padding:12px; border-bottom:1px solid #eee;">— RWF</td>
+          <td style="text-align:right; padding:12px; border-bottom:1px solid #eee;">Calculated later</td>
+        </tr>
+      `;
+    });
+
+    tbody.innerHTML = html || '<tr><td colspan="4" style="padding:20px; text-align:center;">(order format not recognized)</td></tr>';
+  }
+}
+
+// Debug helper: show what arrived (remove later if you want)
+console.log('Received order params:', { name, phone, address, type, rawOrder });
+</script>
+
+</body>
+</html>

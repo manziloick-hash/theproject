@@ -1,0 +1,65 @@
+
+
+  
+    <form id="orderForm">
+      <label>Full Name</label>
+      <input type="text" id="fullName" placeholder="Your name" required>
+
+      <label>Phone Number</label>
+      <input type="tel" id="phone" placeholder="0788 xxx xxx" required>
+
+      <label>Delivery Address</label>
+      <input type="text" id="address" placeholder="Street, House/Apartment number" required>
+
+      <label>Order Type</label>
+      <select id="orderType" required>
+        <option value="">Choose...</option>
+        <option>Delivery</option>
+        <option>Pickup</option>
+      </select>
+
+      <label>Your Order</label>
+      <textarea id="orderDetails" rows="6" placeholder="Example: 2× Classic Burger, 1× Pepsi, no onions..." required></textarea>
+
+      <button type="submit" class="btn" style="width:100%; padding:16px; font-size:1.3rem; margin-top:1.5rem;">
+        Send Order → Pay on Delivery
+      </button>
+    </form>
+
+    <script>
+      document.getElementById("orderForm").addEventListener("submit", function(e) {
+        e.preventDefault(); 
+
+        const name    = document.getElementById("fullName").value.trim();
+        const phone   = document.getElementById("phone").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const type    = document.getElementById("orderType").value;
+        const details = document.getElementById("orderDetails").value.trim();
+
+        
+        if (!name || !phone || !address || !type || !details) {
+          alert("Please fill in all fields!");
+          return;
+        }
+
+        
+        const params = new URLSearchParams({
+          name:    name,
+          phone:   phone,
+          address: address,
+          type:    type,
+          order:   details
+        });
+
+        
+        window.location.href = "invoice.html?" + params.toString();
+      });
+    </script>
+
+  </div>
+</section>
+
+<footer></footer>
+
+</body>
+</html>

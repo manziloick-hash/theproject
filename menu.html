@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bistro Delight - Our Menu</title>
+
+  <!-- All CSS goes here -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f5f2;
+    }
+
+    header {
+      background: #2c1810;
+      color: white;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #e67e22;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e67e22;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #e67e22;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #d35400;
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 140px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #2c1810;
+      font-size: 2.4rem;
+    }
+
+    /* === THIS IS WHERE THE MAGIC HAPPENS – 4 CARDS PER ROW === */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 side by side on desktop */
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr; /* 1 per row on mobile */
+      }
+    }
+
+    /* Make images same size for perfect rows */
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card-content {
+      flex-grow: 1;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .card.drink .card-content {
+      padding: 3rem 1.5rem;
+    }
+
+    footer {
+      background: #2c1810;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body><header>
+  <nav class="container">
+   <a href="index.html"><div class="logo">Bistro Delight</div></a>    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" style=" color: #e67e22">Menu</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="invoice.html">Invoice</a></li>
+      <li><a href="signup.html">Signup</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <section id="menu">
+    <div class="container">
+      <h2>Our Menu</h2>
+      <p style="text-align:center; margin-bottom:4rem; font-size:1.1rem; color:#666;">
+        Fresh ingredients · Local flavors · Made with love in Kigali
+      </p>
+
+      <h3 style="text-align:center; margin:3rem 0 2rem; color:#2c1810; font-size:2rem;">Starters</h3>
+      <div class="menu-grid">
+        <div class="card">
+          <img src="A1.jpg" alt="French Onion Soup">
+          <div class="card-content">
+            <h4>French Onion Soup</h4>
+            <p>Rich, cheesy gruyère toast on top</p>
+            <span class="price">9,500 RWF</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="A2.jpg" alt="Goat Cheese Salad">
+          <div class="card-content">
+            <h4>Goat Cheese Salad</h4>
+            <p>Warm goat cheese on greens with honey & nuts</p>
+            <span class="price">11,000 RWF</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="A3.jpg" alt="Garlic Butter Mushrooms">
+          <div class="card-content">
+            <h4>Garlic Butter Mushrooms</h4>
+            <p>Sautéed champignons with fresh herbs</p>
+            <span class="price">8,500 RWF</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="A4.jpg" alt="Brochettes Skewers">
+          <div class="card-content">
+            <h4>Brochettes Skewers (Rwandan Twist)</h4>
+            <p>Mini goat or chicken with spicy peanut sauce</p>
+            <span class="price">10,000 RWF</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="text-align:center; margin:3rem 0 2rem; color:#2c1810; font-size:2rem;">Mains</h3>
+      <div class="menu-grid">
+        <div class="card">
+        <img src="A5.jpg" alt="Steak Frites">
+        <div class="card-content">
+          <h4>Steak Frites</h4>
+          <p>Grilled beef tenderloin with crispy fries & pepper sauce</p>
+          <span class="price">26,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="A6.jpg" alt="Coq au Vin">
+        <div class="card-content">
+          <h4>Coq au Vin</h4>
+          <p>Braised chicken in red wine with mushrooms & onions</p>
+          <span class="price">22,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="A7.jpg" alt="Ratatouille">
+                <div class="card-content">
+          <h4>Ratatouille</h4>
+          <p>Veggie stew served with crusty bread or polenta</p>
+          <span class="price">16,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="A8.jpg" alt="Croque Monsieur">
+        <div class="card-content">
+          <h4>Croque Monsieur</h4>
+          <p>Toasted ham & cheese sandwich with béchamel</p>
+          <span class="price">14,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="A9.jpg" alt="Grilled Goat Brochettes">
+        <div class="card-content">
+          <h4>Grilled Goat Brochettes</h4>
+          <p>With ugali & sukuma wiki (greens)</p>
+          <span class="price">23,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="A10.jpg" alt="Pan-Seared Tilapia">
+        <div class="card-content">
+          <h4>Pan-Seared Tilapia</h4>
+          <p>With lemon butter & plantain chips</p>
+          <span class="price">19,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="B1.jpg" alt="Agatogo">
+        <div class="card-content">
+          <h4>Agatogo</h4>
+          <p>Plantain & veggie stew with herb-roasted chicken side</p>
+          <span class="price">18,500 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="B2.jpg" alt="Beef Bourguignon Style">
+        <div class="card-content">
+          <h4>Beef Bourguignon Style</h4>
+          <p>Slow-cooked stew using local beef</p>
+          <span class="price">25,000 RWF</span>
+        </div>
+      </div>
+    </div>
+
+        
+      </div>
+
+      <!-- Desserts – 4 items -->
+      <h3 style="text-align:center; margin:3rem 0 2rem; color:#2c1810; font-size:2rem;">Desserts</h3>
+      <div class="menu-grid">
+         <div class="card">
+        <img src="B3.jpg" alt="Crème Brûlée">
+        <div class="card-content">
+          <h4>Crème Brûlée</h4>
+          <p>Classic vanilla with caramelized top</p>
+          <span class="price">9,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="B4.jpg" alt="Chocolate Lava Cake">
+        <div class="card-content">
+          <h4>Chocolate Lava Cake</h4>
+          <p>Warm molten center with vanilla ice cream</p>
+          <span class="price">10,000 RWF</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="B5.jpg" alt="Tarte Tatin">
+        <div class="card-content">
+          <h4>Tarte Tatin</h4>
+          <p>Upside-down apple tart</p>
+          <span class="price">11,000 RWF</span>
+        </div>
+      </div>
+      <!-- Added 4th dessert (you can change image/src if you have another photo) -->
+      <div class="card">
+        <img src="B10.jpg" alt="Fresh Fruit Salad">
+        <div class="card-content">
+          <h4>Fresh Fruit Salad</h4>
+          <p>Seasonal fruits with yogurt & honey</p>
+          <span class="price">8,500 RWF</span>
+        </div>
+      </div>
+    </div>
+        <!-- your 4 desserts cards here -->
+        <!-- ... paste your desserts cards ... -->
+      </div>
+
+      <!-- Drinks – 4 items -->
+      <h3 style="text-align:center; margin:3rem 0 2rem; color:#2c1810; font-size:2rem;">Drinks</h3>
+      <div class="menu-grid">
+        <div class="card drink">
+        <img src="B6.jpg" alt="Fresh Passion Fruit Juice">
+        <div class="card-content">
+          <h4>Fresh Passion Fruit Juice</h4>
+          <p>Mango juice with apple</p>
+          <span class="price">5,000 RWF</span>
+        </div>
+      </div>
+      <div class="card drink">
+        <img src="B7.jpg" alt="House Red/White Wine">
+        <div class="card-content">
+          <h4>House Red/White Wine (glass)</h4>
+          <p>Red wine</p>
+          <span class="price">10,000 RWF</span>
+        </div>
+      </div>
+      <div class="card drink">
+        <img src="B8.jpg" alt="Rwandan Coffee or Tea">
+        <div class="card-content">
+          <h4>Rwandan Coffee or Tea</h4>
+          <p>Local coffee from Rwanda</p>
+          <span class="price">4,000 RWF</span>
+        </div>
+      </div>
+      <div class="card drink">
+        <img src="B9.jpg" alt="Passion Fruit Mojito">
+        <div class="card-content">
+          <h4>Passion Fruit Mojito</h4>
+          <p>Mango juice and lemon</p>
+          <span class="price">12,000 RWF</span>
+        </div>
+      </div>
+    </div>
+        <!-- your 4 drinks cards here -->
+        <!-- ... paste your drinks cards ... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional footer -->
+  <footer>
+    <p>&copy; 2026 Bistro Delight - Kigali. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
